@@ -150,19 +150,25 @@ public class connectToDb {
 	        return completedpath;
 
 	} 
-	 static void moveFile(String src, int i) {
+	 static void moveFile( int i,String src) {
 		 Path temp = null;
 		try {
 			 String currentdir = System.getProperty("user.dir");
+		        currentdir ="C:\\Agent\\";
 		        currentdir = currentdir.replace( "\\", "/" );
-		      
 		        
-				String s=Integer.toString(i);
 				
-			temp = Files.move
-			            (Paths.get(src),
-			            Paths.get(currentdir+"/completedCSV/"+i+".csv"));
-		
+				String path="C:\\Agent\\License\\"+i+".csv";
+				//String src="C:\\Agent\\License\\LicenseCSV.csv";
+				System.out.println(path);
+				System.out.println(src);
+			//temp = Files.move
+			          //  (Paths.get(src),
+			           // Paths.get(currentdir+"/completedCSV/"+i+".csv"));
+				 temp = Files.move
+				        (Paths.get(src),
+				        Paths.get(path));
+				 
 			
 			
 				
@@ -170,7 +176,7 @@ public class connectToDb {
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("no file to be moved"+e);
 		}
 	         
 	                if(temp != null)

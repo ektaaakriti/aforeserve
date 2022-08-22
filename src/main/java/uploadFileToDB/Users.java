@@ -9,6 +9,20 @@ public class Users {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	private String ip;
+	private String start_date;
+	public String getIp() {
+		return ip;
+	}
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+	public String getStart_date() {
+		return start_date;
+	}
+	public void setStart_date(String start_date) {
+		this.start_date = start_date;
+	}
 	private String Mobile;
 	private String Email_ID;
 	private String Password;

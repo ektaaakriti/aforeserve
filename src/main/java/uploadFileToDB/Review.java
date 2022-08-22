@@ -18,8 +18,8 @@ public class Review {
     private String OS_Version;
     private String OS_Key;
     private String Total_RAM;
-    private String RAM_Slots_Available;
-    private String RAM_Slots_Used;
+    private String RAM_Available;
+    private String RAM_Used;
     private String HD_Make;
     private String HD_Model;
     private String HD_Serial_Number;
@@ -47,6 +47,146 @@ public class Review {
     private String Site_Name;
     private String Sub_Department_Name;
     private String Aforesight_Agent_ID;
+    public String  MS_Office_2010;
+	public String MS_Office_2013;
+	public String MS_Office_2016;
+	public String Adobe_Reader;
+	public String  Java8;
+	public String Symantec_Antivirus;
+	public String Mcafee_Antivirus;
+	public String  Trend_Micro_Antivirus;
+	public String Microsoft_Teams;
+	public String  MS_Office_2007;
+	public String Anydesk;
+	public String OneDrive;
+	public String zip7;
+	public String  Mozilla_Firefox;
+	public String  Google_Chrome;
+	public String  Team_Viewer;
+	public String Zoom;
+	public String Webex;
+	public String AutoCad;
+	public String Winrar;
+	public String getMS_Office_2010() {
+		return MS_Office_2010;
+	}
+	public void setMS_Office_2010(String mS_Office_2010) {
+		MS_Office_2010 = mS_Office_2010;
+	}
+	public String getMS_Office_2013() {
+		return MS_Office_2013;
+	}
+	public void setMS_Office_2013(String mS_Office_2013) {
+		MS_Office_2013 = mS_Office_2013;
+	}
+	public String getMS_Office_2016() {
+		return MS_Office_2016;
+	}
+	public void setMS_Office_2016(String mS_Office_2016) {
+		MS_Office_2016 = mS_Office_2016;
+	}
+	public String getAdobe_Reader() {
+		return Adobe_Reader;
+	}
+	public void setAdobe_Reader(String adobe_Reader) {
+		Adobe_Reader = adobe_Reader;
+	}
+	public String getJava8() {
+		return Java8;
+	}
+	public void setJava8(String java8) {
+		Java8 = java8;
+	}
+	public String getSymantec_Antivirus() {
+		return Symantec_Antivirus;
+	}
+	public void setSymantec_Antivirus(String symantec_Antivirus) {
+		Symantec_Antivirus = symantec_Antivirus;
+	}
+	public String getMcafee_Antivirus() {
+		return Mcafee_Antivirus;
+	}
+	public void setMcafee_Antivirus(String mcafee_Antivirus) {
+		Mcafee_Antivirus = mcafee_Antivirus;
+	}
+	public String getTrend_Micro_Antivirus() {
+		return Trend_Micro_Antivirus;
+	}
+	public void setTrend_Micro_Antivirus(String trend_Micro_Antivirus) {
+		Trend_Micro_Antivirus = trend_Micro_Antivirus;
+	}
+	public String getMicrosoft_Teams() {
+		return Microsoft_Teams;
+	}
+	public void setMicrosoft_Teams(String microsoft_Teams) {
+		Microsoft_Teams = microsoft_Teams;
+	}
+	public String getMS_Office_2007() {
+		return MS_Office_2007;
+	}
+	public void setMS_Office_2007(String mS_Office_2007) {
+		MS_Office_2007 = mS_Office_2007;
+	}
+	public String getAnydesk() {
+		return Anydesk;
+	}
+	public void setAnydesk(String anydesk) {
+		Anydesk = anydesk;
+	}
+	public String getOneDrive() {
+		return OneDrive;
+	}
+	public void setOneDrive(String oneDrive) {
+		OneDrive = oneDrive;
+	}
+	public String getZip7() {
+		return zip7;
+	}
+	public void setZip7(String zip7) {
+		this.zip7 = zip7;
+	}
+	public String getMozilla_Firefox() {
+		return Mozilla_Firefox;
+	}
+	public void setMozilla_Firefox(String mozilla_Firefox) {
+		Mozilla_Firefox = mozilla_Firefox;
+	}
+	public String getGoogle_Chrome() {
+		return Google_Chrome;
+	}
+	public void setGoogle_Chrome(String google_Chrome) {
+		Google_Chrome = google_Chrome;
+	}
+	public String getTeam_Viewer() {
+		return Team_Viewer;
+	}
+	public void setTeam_Viewer(String team_Viewer) {
+		Team_Viewer = team_Viewer;
+	}
+	public String getZoom() {
+		return Zoom;
+	}
+	public void setZoom(String zoom) {
+		Zoom = zoom;
+	}
+	public String getWebex() {
+		return Webex;
+	}
+	public void setWebex(String webex) {
+		Webex = webex;
+	}
+	public String getAutoCad() {
+		return AutoCad;
+	}
+	public void setAutoCad(String autoCad) {
+		AutoCad = autoCad;
+	}
+	public String getWinrar() {
+		return Winrar;
+	}
+	public void setWinrar(String winrar) {
+		Winrar = winrar;
+	}
 	public String getScan_Date() {
 		return Scan_Date;
 	}
@@ -129,17 +269,17 @@ public class Review {
 	public void setTotal_RAM(String total_RAM) {
 		Total_RAM = total_RAM;
 	}
-	public String getRAM_Slots_Available() {
-		return RAM_Slots_Available;
+	public String getRAM_Available() {
+		return RAM_Available;
 	}
-	public void setRAM_Slots_Available(String rAM_Slots_Available) {
-		RAM_Slots_Available = rAM_Slots_Available;
+	public void setRAM_Available(String rAM_Available) {
+		RAM_Available = rAM_Available;
 	}
-	public String getRAM_Slots_Used() {
-		return RAM_Slots_Used;
+	public String getRAM_Used() {
+		return RAM_Used;
 	}
-	public void setRAM_Slots_Used(String rAM_Slots_Used) {
-		RAM_Slots_Used = rAM_Slots_Used;
+	public void setRAM_Used(String rAM_Used) {
+		RAM_Used = rAM_Used;
 	}
 	public String getHD_Make() {
 		return HD_Make;
@@ -306,7 +446,7 @@ public class Review {
 	public Review(String scan_Date, String system_Make, String system_form_Factor, String system_Model,
 			String system_Serial_Number, String product_Type, String system_IP_Address, String system_Hostname,
 			String system_OS_type, String oS_License_details, String oS_Version, String oS_Key, String total_RAM,
-			String rAM_Slots_Available, String rAM_Slots_Used, String hD_Make, String hD_Model, String hD_Serial_Number,
+			String rAM_Available, String rAM_Used, String hD_Make, String hD_Model, String hD_Serial_Number,
 			String hD_Capacity, String processor_Details, String mBD_Make, String mBD_Model, String mBD_Serial_Number,
 			String type_of_Chipset, String monitor_Screen_Make, String monitor_Model, String monitor_Serial_Number,
 			String monitor_Screen_Size, String assets_Status, String retired_Date,
@@ -328,8 +468,8 @@ public class Review {
 		OS_Version = oS_Version;
 		OS_Key = oS_Key;
 		Total_RAM = total_RAM;
-		RAM_Slots_Available = rAM_Slots_Available;
-		RAM_Slots_Used = rAM_Slots_Used;
+		RAM_Available = rAM_Available;
+		RAM_Used = rAM_Used;
 		HD_Make = hD_Make;
 		HD_Model = hD_Model;
 		HD_Serial_Number = hD_Serial_Number;

@@ -13,12 +13,21 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
 import uploadFileToDB.Review;
 import uploadFileToDB.connectToDb;
 
@@ -32,43 +41,35 @@ import com.google.protobuf.Timestamp;
 
 public class Main {
 	
-	 public static void main(String[] args) throws IOException {
+	 public static void main(String[] args) throws IOException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException {
 		 connectToDb DB=new connectToDb();
 		 Properties properties = DB.getProperties();
 		 ReadUsers us=new ReadUsers();
 		 InsertNewAsset ast=new InsertNewAsset();
 		 updateexistingAsset as=new updateexistingAsset();
 		 UpdateAssetBySerialNumber ass=new  UpdateAssetBySerialNumber();
-		 String file="";
-		 String users=properties.getProperty("csvpathUsers");
-		 String newAsset =properties.getProperty("csvpathNewAsset");
-		 String AssetIP=properties.getProperty("csvPathUpdateByIpAddress");
-		 String AssetSerial=properties.getProperty("csvPathUpdateBySerialNumber");
-		 int i=0;
+		 LicenseCSV lc=new LicenseCSV();
+		
+		 
+		 int i=1;
+		
 		 while (true) {
-			 i=i++;
-			 if(file==users) {
-				 us.Users();
-				 DB.moveFile(users,i);
-				 
+			 
+			 try {
+				 ast.NewAsset();
+			/* lc.ReadLicense(i);
+			 TimeUnit.MINUTES.sleep(1);
+			 i++;
+			 us.Users(i);*/
+			 TimeUnit.MINUTES.sleep(1);
+			 
 			 }
-			if(file==newAsset) {
-				ast.NewAsset();
-				DB.moveFile(newAsset, i);
-				
-			}
-		if(file==AssetIP) {
-			as.AssetByIP();
-			DB.moveFile(AssetIP, i);
-		}
-			if(file==AssetSerial) {
-				ass.Serial();
-				DB.moveFile(AssetSerial, i);
-				
-			}
-		 }
-	 }
-	 }
+			 catch(Exception e) {
+				 System.out.println("File not found to upload"+e);
+				 
+			 }	 
+	 } 
+}}
 	 
 	
 

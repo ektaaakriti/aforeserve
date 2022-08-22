@@ -14,12 +14,14 @@ import org.supercsv.io.ICsvBeanReader;
 import org.supercsv.prefs.CsvPreference;
 
 public class ReadUsers {
-	public static void Users() {
-	connectToDb DB=new connectToDb();
-Connection dbcon=DB.connect_db();
-Properties properties = DB.getProperties();
+	static String csvFilePath ="";
+	static connectToDb DB=new connectToDb();
+	static Connection dbcon=DB.connect_db();
+	static Properties properties = DB.getProperties();
+	public static void Users(int i) {
+	
  
-	 String csvFilePath =properties.getProperty("csvpathUsers");
+	  csvFilePath =properties.getProperty("csvpathUsers");
    int batchSize = 20;
 
    
@@ -116,7 +118,7 @@ Properties properties = DB.getProperties();
        statement.executeBatch();
 
        dbcon.commit();
-       dbcon.close();
+      
 
        long end = System.currentTimeMillis();
        System.out.println("Execution Time: " + (end - start));
@@ -125,20 +127,11 @@ Properties properties = DB.getProperties();
    } catch (SQLException ex) {
        ex.printStackTrace();
 
-       try {
-           dbcon.rollback();
-       } catch (SQLException e) {
-           e.printStackTrace();
-       }
+      
    }
-   String path = null;
-try {
-	path = DB.createcompletefolder();
-} catch (IOException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-   DB.moveFile(csvFilePath,1);
+
+
+  DB.moveFile(i,csvFilePath );
 }
 
 
